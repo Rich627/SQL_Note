@@ -53,4 +53,25 @@ SELECT TOP number col FROM table_name WHERE condi;
 SELECT col FROM table_name WHERE condi LIMIT number ;
 #取極值平均...min, max, avg, count, sum 寫法都一樣
 SELECT MIN(column_name) FROM table_name WHERE condi;
+#查詢資料裡面是否有某一個字元開頭/結尾%放後面
+SELECT * FROM table_name WHERE xx LIKE 'x%';
+#查詢某資料是否有這些字
+SELECT * FROM table_name WHERE xx LIKE '%x%';
+#查詢col1中值為x的資料
+SELECT * FROM table_name WHERE clo1 in ('x', 'x');
+#查詢clo1中值從x-xx中的資料
+SELECT * FROM tabale_name WHERE col1 BETWEEN x AND xx;
+#col1 縮寫成x, col2所寫成xx
+SELECT col1 as x, clo2 as xx FROM table_name;
+#join資料表:inner, left, right, full
+SELECT * FROM table1 INNER JOIN table2 
+ON table1.x = table2.x;
+#資料表合併在某一col1裡有一樣的val會合併
+SELECT col1 FROM table1 
+UNION 
+SELECT col2 FROM table2;
+#UNION ALL 某一col內不一樣的val視為不同
+SELECT col1 FROM table1
+UNION ALL 
+SELECT col2 FROM table2;
 ```

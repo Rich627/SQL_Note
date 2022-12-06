@@ -40,6 +40,11 @@ CREATE TABLE xx(
 	col1 INT NOT NULL,
 	xx NVARCHAR(50) DEFAULT 'xx'
 );
+#自動加值(起始值,遞增)
+CREATE TABLE Persons (  
+    xx int IDENTITY(1,1) PRIMARY KEY, 
+    xx int  
+);
 ```
 
 ## 修改資料表
@@ -61,6 +66,7 @@ FOREIGN KEY (PersonID) REFERENCES table_name1;
 CREATE UNIQUE INDEX index_name
 ON table_name (col1, _col2, ...);
 ```
+
 ## 刪除資料表
 ```SQL
 #刪除table

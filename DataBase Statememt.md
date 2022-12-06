@@ -50,6 +50,16 @@ ALTER TABLE table_name(
 );
 #修改table中某一col為不重複
 ALTER TABLE xx ADD UNIQUE xx;
+#修改table中每一col為主鍵
+ALTER TABLE table_name
+ADD PRIMARY KEY xx;
+#修改table中每一col為外來鍵
+ALTER TABLE table_name1
+ADD CONSTRAINT FK_Per  
+FOREIGN KEY (PersonID) REFERENCES table_name1;
+＃新增col index
+CREATE UNIQUE INDEX index_name
+ON table_name (col1, _col2, ...);
 ```
 ## 刪除資料表
 ```SQL
@@ -57,6 +67,17 @@ ALTER TABLE xx ADD UNIQUE xx;
 DROP table xx;
 #刪除現有tabe的col
 ALTER TABLE x DROP COLUMN col
-#修改table中某一col為不重複的條件
+#刪除table中某一col為不重複的條件
 ALTER TABLE xx DROP INDEX xx;
+#刪除table中某一col為主鍵
+ALTER TABLE talbe_name  
+DROP CONSTRAINT xx;
+#刪除table中某一col為主鍵
+ALTER TABLE Orders  
+DROP CONSTRAINT FK_PersonOrder;
+#刪除table中某一col為預設
+ALTER TABLE table_name  
+ALTER COLUMN xx DROP DEFAULT;
+#刪除col index
+DROP INDEX table_name.index_name;
 ```
